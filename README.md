@@ -4,3 +4,4 @@ Bienvenidos al repositorio de **Miguel**. Aquí encontraras todos los ejercicios
 - Ejercicios HTML
 - Ejercicios CSS
 - Ejercicios JS
+- Ejercicios de JQuery 
