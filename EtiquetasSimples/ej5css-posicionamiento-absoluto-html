@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de caja</title>
+    <style>
+        #caja1 {
+            width: 400px;
+            height: 400px;
+            background-color: orange;
+            color: black;
+            border: 10px dotted purple; 
+            padding: 50px ;
+            /*Posicionamiento absoluto*/
+            position: absolute;
+            top: 200px;
+            left: 600px;
+        }
+        #caja2 {
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            color: black;
+            border: 10px dashed greenyellow; 
+            padding: 30px ;
+        }
+        #caja3 {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            color: black;
+            border: 10px ridge royalblue; 
+            padding: 40px ;
+            position: absolute;
+            bottom: -100px;
+            right: -50px;
+            }
+    </style>
+</head>
+<body>
+    <h1>Posicionamiento relativo</h1>
+    <div id="caja1">Texto</div>
+    <div id="caja2">Texto</div>
+    <div id="caja3">Texto</div>
+
+
+</body>
+</html>
