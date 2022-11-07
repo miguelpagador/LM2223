@@ -1,0 +1,10 @@
+#caja1 {
+    top: 15px;
+    position: fixed;
+}
+
+#caja2 {
+    position: relative;
+    top: 80px;
+    z-index: -1;
+}
