@@ -6,6 +6,7 @@
   body {
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image:url(Imagenes/coponieve.jpg); position: sticky; background-repeat: no-repeat; background-size: cover;
   }
   
   .header {
