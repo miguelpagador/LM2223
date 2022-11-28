@@ -1,0 +1,44 @@
+body {
+    background-color: lightgoldenrodyellow;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.caja {
+    border: 4px solid black;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.contenedor {
+    display: grid; 
+    margin: 0 auto;
+    width: 80%;
+    height: 84vh;
+    grid-template-areas: 'c1 c1' 'c2 c2' 'c3 c4' 'c5 c5';
+    grid-template-rows: 10% 20% auto 10%;
+    justify-content: stretch;
+    border: 2px dashed black;
+    padding:20px;
+    background-color: lightgray;
+}
+
+.c1 {
+    background-color: cornflowerblue;
+}
+
+.c2 {
+    background-color:forestgreen ;
+}
+
+.c3 {
+    background-color: lightsalmon;
+}
+
+.c4 {
+    background-color: orchid;
+}
+
+.c5 {
+    background-color: red;
+}
