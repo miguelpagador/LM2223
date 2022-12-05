@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap");
+
+body{
+    background-color: lightgray;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-left:10vw;
+    margin-bottom:1em;
+    margin-right:10vw;
+    margin-top:1em;
+    font-variant:small-caps;
+    font-weight:bold;
+    font-size: 24px;
+}
+
+[class~=span2]{grid-column-end:span 2;}
+
+#colorfavorito{
+    width:1em;
+    height:1em;
+}
+
+select,textarea,input,body{
+    font-family:"Open Sans Condensed",Arial,Helvetica,sans-serif;
+    font-variant:small-caps;
+    font-weight:bold;
+    font-size: 24px;
+
+}
+
+form{background-color:white;
+    border-bottom-width:.010416667in;
+    border-right-width:.010416667in;
+    border-top-width:.010416667in;
+    border-left-width:.010416667in;
+    border-left-style:solid;
+    border-bottom-style:solid;
+    border-right-style:solid;
+    border-top-style:solid;
+    border-left-color:black;
+    border-bottom-color:black;
+    border-right-color:black;
+    border-top-color:black;
+    border-image:none;
+}
+
+fieldset{
+    border-left-width:.010416667in;
+    border-bottom-width:.010416667in;
+    border-right-width:.010416667in;
+    border-top-width:.010416667in;
+    border-left-style:none;
+    border-bottom-style:none;
+    border-right-style:none;
+    border-top-style:none;
+    border-left-color:currentColor;
+    border-bottom-color:currentColor;
+    border-right-color:currentColor;
+    border-top-color:currentColor;
+    border-image:none;
+}
+
+div{
+    display:grid;
+    grid-row-gap:1em;
+}
+
+label[for="name"]::after{content:":";}

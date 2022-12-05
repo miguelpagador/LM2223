@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="ej2.css">
+</head>
+<body>
+    <header>
+        <h1>Crea tu personaje</h1>
+    </header>
+
+    <form action="#" enctype="multipart/form-data" method="post">
+
+        <fieldset>
+            <legend>Por favor rellena este formulario.</legend>
+            <div>
+                <label for="name">Nombre</label>
+                <input type="text" name="class" id="name" placeholder="Escribe el nombre de tu personaje...">
+                <label for="poderes">¿Tiene poderes especiales?</label>
+                <input type="checkbox" name="locks" id="colorfavorito">
+                <label for="colour">Color favorito</label>
+                <input type="color" name="colour">
+                <label for="phone">Descripción del mismo</label>
+                <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <label for="date">Email de su tribu</label>
+                <input type="email" name="email">
+                <label for="date">Nacimiento</label>
+                <input type="date" name="date">
+                <label for="alignment">Bando</label>
+                <select id="alignment" name="alignment"><option value="good">Buenos</option><option value="evil">Malvados</option></select>
+                <label for="story" class="span2">Historia del personaje</label>
+                <textarea class="span2" cols="30" id="story" name="story" placeholder="Puntos débiles..." rows="10"></textarea>
+                <label for="file">Imagen</label>
+                <input type="file" name="my-file" id="file" enctype="multipart/form-data">
+                <input type="submit" value="Crear">
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
