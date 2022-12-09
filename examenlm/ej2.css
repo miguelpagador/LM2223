@@ -1,0 +1,42 @@
+
+body {
+    margin: 1em 10vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(52, 49, 49);
+
+  }
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+
+  .span2 {
+    grid-column-end: span 2;
+  }
+
+  a:hover {
+    color: #1717FF;
+    cursor: pointer;
+  }
+
+  a {
+    color: gray;
+    font-weight: bold;
+    text-decoration: none;
+}
