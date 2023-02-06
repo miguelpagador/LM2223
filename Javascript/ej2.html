@@ -42,7 +42,7 @@
         function imprimePosts() {
             let longitud=posts.lenght;
             let i=0, codigoHTML="";
-            let i=icono="<div class='tweet'><img src='imagenes/pajaro.png'>";
+            let icono="<div class='tweet'><img src='imagenes/pajaro.png'>";
             for (i=0;i<longitud;i++) {
                 codigoHTML+=icono+posts[i]+" <button class=\"btn-image\" onclick='eliminar(posts["+i+"]);''></button><br></div>";
             }
