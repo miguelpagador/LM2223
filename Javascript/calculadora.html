@@ -19,27 +19,27 @@
 
     <script>
         function sumaNumero(){
-            let numero1 = document.getElementById("numero1").value;
-            let numero2 = document.getElementById("numero2").value;
+            let numero1 = parsefloat (document.getElementById("numero1").value);
+            let numero2 = parsefloat (document.getElementById("numero2").value);
             document.write(numero1 + numero2)
         }
 
         function restaNumero(){
-            let numero1 = document.getElementById("numero1").value;
-            let numero2 = document.getElementById("numero2").value;
-            document.write(numero1 - numero2)
+            let numero1 = parsefloat (document.getElementById("numero1").value);
+            let numero2 = parsefloat (document.getElementById("numero2").value);
+            document.write(numero1 - numero2);
         }
 
         function multiplicaNumero(){
-            let numero1 = document.getElementById("numero1").value;
-            let numero2 = document.getElementById("numero2").value;
-            document.write(numero1 * numero2)
+            let numero1 = parsefloat (document.getElementById("numero1").value);
+            let numero2 = parsefloat (document.getElementById("numero2").value);
+            document.write(numero1 * numero2);
         }
 
         function divideNumero(){
-            let numero1 = document.getElementById("numero1").value;
-            let numero2 = document.getElementById("numero2").value;
-            document.write(numero1 / numero2)
+            let numero1 = parsefloat (document.getElementById("numero1").value);
+            let numero2 = parsefloat (document.getElementById("numero2").value);
+            document.write(numero1 / numero2);
         }
 
     </script>
