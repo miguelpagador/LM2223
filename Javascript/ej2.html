@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red social</title>
+    <style>
+        .rectangulo{
+            width: 50%;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="post" placeholder="Escribe post"><button onclick="anadir()">Enviar</button>
+    <p>Pulsa el boton para sustraer elementos</p>
+    <button onclick="ordenar()">Ordenar</button>
+    <p id="demo"></p>
+    <script>
+        let posts=["Mi primer tweet", "Mi segundo tweet", "Mi tercer tweet"];
+        imprimePosts();
+        function ordenar(){
+            posts.sort();
+            imprimePosts();
+        }
+
+        function eliminar(elemento) {
+            let pos=posts.indexOf(elemento);
+            posts.splice(pos,1);
+            imprimePosts();
+        }
+
+        function anadir() {
+            var mensaje=document.getElementById("post").value;
+            posts.push(mensaje);
+            imprimePosts();
+        }
+
+        function imprimePosts() {
+            let longitud=posts.lenght;
+            let i=0, codigoHTML="";
+            let icono="<div class='tweet'><img src='imagenes/pajaro.png'>";
+            for (i=0;i<longitud;i++) {
+                codigoHTML+=icono+posts[i]+" <button class=\"btn-image\" onclick='eliminar(posts["+i+"]);''></button><br></div>";
+            }
+            document.getElementById("demo").innerHTML=codigoHTML;
+        }
+        
+    </script>
+
+</body>
+</html>

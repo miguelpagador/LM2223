@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+
+    <h1>Calculadora</h1>
+
+    <input type="text" name="" id="numero1" placeholder="Numero 1"><br><br>
+    <input type="text" name="" id="numero2" placeholder="Numero 2"><br><br>
+    <button onclick="sumaNumero()"> + </button>
+    <button onclick="restaNumero()"> - </button>
+    <button onclick="multiplicaNumero()"> * </button>
+    <button onclick="divideNumero()"> / </button>
+
+    <script>
+        function sumaNumero(){
+            let numero1 = parsefloat (document.getElementById("numero1").value);
+            let numero2 = parsefloat (document.getElementById("numero2").value);
+            document.write(numero1 + numero2)
+        }
+
+        function restaNumero(){
+            let numero1 = parsefloat (document.getElementById("numero1").value);
+            let numero2 = parsefloat (document.getElementById("numero2").value);
+            document.write(numero1 - numero2);
+        }
+
+        function multiplicaNumero(){
+            let numero1 = parsefloat (document.getElementById("numero1").value);
+            let numero2 = parsefloat (document.getElementById("numero2").value);
+            document.write(numero1 * numero2);
+        }
+
+        function divideNumero(){
+            let numero1 = parsefloat (document.getElementById("numero1").value);
+            let numero2 = parsefloat (document.getElementById("numero2").value);
+            document.write(numero1 / numero2);
+        }
+
+    </script>
+
+</body>
+</html>
