@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisores</title>
+</head>
+<body>
+    <h1>Divisores</h1>
+    <form action="">
+        <input type="text" name="" id="entrada">
+    </form>
+    <p id="resultado"></p>
+    <button onclick="esDivisor()">¿Que divisores tiene?</button>
+<script>
+    function esDivisor() {
+        let entrada = document.getElementById("entrada").value;
+        i=1;
+        divisor=true;
+        while(i<entrada)
+        {
+            
+        if(entrada%i==0)
+        {
+            divisor=false;
+            document.write([i]+"<br>");
+        } i++;
+        }
+
+        if (primo==true)
+        {
+            document.getElementById("resultado").innerHTML = "Es primo";
+        }
+        else
+        {
+            document.getElementById("resultado").innerHTML = "No es primo";
+        }
+    }
+
+    </script>
+</body>
+</html>
