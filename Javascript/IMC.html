@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    <h1>Claculadora indice masa corporal</h1>
+    <input type="number" name="" id="peso" placeholder="Peso en kg"><br><br>
+    <input type="number" name="" id="altura" placeholder="Altura en m"><br><br>
+    <button onclick="calculo()"> Calcular </button>
+    <p id="demo"></p>
+    <script>
+        function validaEntrada(){
+            let valida=true;
+            if (document.getElementById("peso").value=="" || document.getElementById("altura").value=="")
+            {
+            valida = false;
+            }
+            return valida;
+        }
+        function calculo(){
+            if (validaEntrada()){
+                let peso = parseFloat (document.getElementById("peso").value);
+                let altura = parseFloat (document.getElementById("altura").value);
+                document.getElementById("demo").innerHTML = (peso/(altura*altura))
+            }
+            else{
+                document.getElementById("demo").innerHTML="Debes escribir números"
+            }
+        }
+    </script>
+
+</body>
+</html>
