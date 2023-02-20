@@ -12,10 +12,11 @@
     <input type="number" name="" id="altura" placeholder="Altura en m"><br><br>
     <button onclick="calculo()"> Calcular </button>
     <p id="demo"></p>
+    <p id="num"></p>
     <script>
         function validaEntrada(){
             let valida=true;
-            if (document.getElementById("peso").value=="" || document.getElementById("altura").value=="")
+            if (document.getElementById("peso").value<=0 || document.getElementById("altura").value=="" || document.getElementById("altura").value<=0 || document.getElementById("peso").value=="")
             {
             valida = false;
             }
@@ -25,10 +26,26 @@
             if (validaEntrada()){
                 let peso = parseFloat (document.getElementById("peso").value);
                 let altura = parseFloat (document.getElementById("altura").value);
-                document.getElementById("demo").innerHTML = (peso/(altura*altura))
+                let calculo = (peso/(altura*altura)).toFixed(3);
+                    if (calculo < 20){
+                        document.getElementById("num").innerHTML=calculo;
+                        document.getElementById("demo").innerHTML="Peso inferior a lo normal"
+                    }
+                    else if (calculo >= 20 && calculo < 24){
+                        document.getElementById("num").innerHTML=calculo;
+                        document.getElementById("demo").innerHTML= "Peso normal";
+                    }
+                    else if (calculo >= 24 && calculo < 29){
+                        document.getElementById("num").innerHTML=calculo;
+                        document.getElementById("demo").innerHTML= "Peso superior a lo normal";
+                    }
+                    else {
+                        document.getElementById("num").innerHTML=calculo;
+                        document.getElementById("demo").innerHTML= "Obesidad";
+                    }
             }
-            else{
-                document.getElementById("demo").innerHTML="Debes escribir números"
+            else {
+                document.getElementById("demo").innerHTML = "Debes escribir números positivos mayores que cero"
             }
         }
     </script>
