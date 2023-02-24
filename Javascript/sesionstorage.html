@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sesionstorage</title>
+</head>
+<body>
+    <label for="action">
+        <p>
+            Clave: <input type="text" id="clave" placeholder="clave"><br><br>
+        </p>
+        <p>
+            Valor: <input type="text" id="valor" placeholder="valor"><br><br>
+        </p>
+        <button id="guardar">Guardar</button>
+    </label>
+    <p id="demo"></p>
+
+    <script>
+        sessionStorage.setItem("color", "rojo");
+        document.getElementById("demo").innerHTML=
+        localStorage.getItem("color");
+    </script>
+</body>
+</html>
