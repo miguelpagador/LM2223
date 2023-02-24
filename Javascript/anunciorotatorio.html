@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuncios rotatorios</title>
+</head>
+<body>
+    <h1>Anuncios rotatorios</h1>
+
+    <p id="foto"></p>
+
+    <script>
+
+    fotos = new Array();
+    var variable1 = Math.floor(Math.random() * 5);
+
+    var totalFotos;
+    fotos[0] = "<a href='https://store.dsautomobiles.es/configurable'><img src='Imagenes/banner0.png'></a>";
+    fotos[1] = "<a href='https://www.elcorteingles.es/supermercado/'><img src='Imagenes/banner1.png'></a>";
+    fotos[2] = "<a href='https://www.elcorteingles.es/daitsu/electrodomesticos/aire-acondicionado/'><img src='Imagenes/banner.png'></a>";
+    fotos[3] = "<a href='https://www.madridhifi.com'><img src='Imagenes/banner3.png'></a>";
+    fotos[4] = "<a href='https://launidad.movistarplus.es/?dis_c=331187589&dclid=CL-Lt9zx4_YCFdZEHQkdLpkExQ'><img src='Imagenes/banner4.png'></a>";
+    fotos[5] = "<a href='https://www.tikamoon.es'><img src='Imagenes/banner5.png'></a>";
+    pasar()
+
+   
+    const myTimeout = setInterval(pasar, 3000);
+
+    function pasar() {
+    totalfotos = fotos.length;
+        if (variable1 == totalfotos - 1) 
+        {
+        variable1 = 0
+        } 
+        else 
+        {
+        variable1 = variable1 + 1
+        }
+        document.getElementById("foto").innerHTML = fotos[variable1];
+    }
+
+    </script>
+</body>
+</html>
