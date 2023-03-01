@@ -22,40 +22,18 @@
     </form>
 
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("formulario").addEventListener('submit', validarFormulario); 
-            });
-            var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+            var form = document.getElementById("formulario");
+            var nombre = document.getElementById("nombre");
+            var apellidos = document.getElementById("apellidos");
+            var correo = document.getElementById("correo");
+            var DNI = document.getElementById("DNI");
+            var PIN = document.getElementById("PIN");
+            var PIN2 = document.getElementById("PIN2");
 
-        function validarFormulario(evento) {
-            evento.preventDefault();
-            var direccion = document.getElementById('direccion').value;
-            if(nombre.length == 0) {
-                document.getElementById("direccion").innerHTML="No has escrito nada en direccion";
-                return;
-            }
-            var ciudad = document.getElementById('ciudad').value;
-            if(nombre.length == 0) {
-                document.getElementById("ciudad").innerHTML="No has escrito nada en ciudad";
-                return;
-            }
-            var telefono = document.getElementById('telefono').value;
-            if(telefono.length == 0) {
-                document.getElementById("ciudad").innerHTML="No has escrito nada en telefono";
-                return;
-            }
-            var PIN = document.getElementById('PIN').value;
-            if (PIN.length == 8) {
-                document.getElementById("nombre").innerHTML="El PIN tiene que tener 8 digitos";
-                return;
-            }
-            var PIN = document.getElementById('PIN2').value;
-            if (PIN2.length == 8) {
-                document.getElementById("nombre").innerHTML="El PIN2 tiene que tener 8 digitos";
-            return;
-            }
-        this.submit();
-    }
+            form.addEventListener('enviar', e => {
+                
+            })
+
         </script>
 </body>
 </html>

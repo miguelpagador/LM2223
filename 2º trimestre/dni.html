@@ -13,28 +13,22 @@
     <p id="demo"></p>
 
     <script>
-        var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
-        function validaEntrada(){
-            let valida=true;
-            if (document.getElementById("numeroDni").value.length="8");
-            {
-            valida = false;
-            }
-            return valida;
-
-        }
         function calculo(){
-            if (validaEntrada()){
             var num = (document.getElementById("numeroDni").value);
-            var resto = num % 23;
-            var indice = resto;
-            letras.length[indice];
-            document.getElementById("demo").innerHTML = num + letras[indice];
+            if (num < 0 || num > 99999999)
+            {
+                alert("Debes escribir un numero de 8 digitos");
             }
-            else{
-                document.getElementById("demo").innerHTML = "Debes escribir 8 digitos"
+            else
+            {
+                var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+                var num = (document.getElementById("numeroDni").value);
+                var resto = num % 23;
+                var indice = resto;
+                document.getElementById("demo").innerHTML = num + letras[indice];
             }
-        }
+            }
+        
     </script>
 </body>
 </html>
