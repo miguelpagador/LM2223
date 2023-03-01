@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>habitaciones</title>
+    <title>Habitaciones</title>
 </head>
 <body>
-    
+    <h1>Habitaciones</h1>
+    <input type="number" id="adulto"><br><br>
+    <input type="number" id="niños"><br><br>
+    <button onclick="calculo()">Enviar</button>
+    <p id="demo"></p>
+
+    <script>
+        function calculo(){
+            var numadultos = (document.getElementById("adulto").value);
+            var numniños = (document.getElementById("niños").value);
+                if (numadultos=="1" || numadultos=="2")
+                {
+                    document.getElementById("demo").innerHTML = "Habitaciones dobles";
+                }
+                    else if (numadultos=="3")
+                    {
+                        document.getElementById("demo").innerHTML = "Habitaciones triples";
+                    }
+                if (numadultos=="2" && numniños=="1")
+                {
+                    document.getElementById("demo").innerHTML = "Habitaciones dobles con supletorias";
+                }
+                    else if (numniños=="2")
+                    {
+                        document.getElementById("demo").innerHTML = "Habitaciones familiares";
+                    }
+                }
+
+    </script>
 </body>
 </html>
