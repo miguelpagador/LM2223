@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dni</title>
+</head>
+<body>
+    <h1>Escriba su DNI</h1>
+    <input type="text" id="numeroDni" placeholder="Introduce el DNI"><br><br>
+    <button onclick="calculo()">Resolver letra</button>
+    <p id="demo"></p>
+
+    <script>
+        var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+        function validaEntrada(){
+            let valida=true;
+            if (document.getElementById("numeroDni").value.length="8");
+            {
+            valida = false;
+            }
+            return valida;
+
+        }
+        function calculo(){
+            if (validaEntrada()){
+            var num = (document.getElementById("numeroDni").value);
+            var resto = num % 23;
+            var indice = resto;
+            letras.length[indice];
+            document.getElementById("demo").innerHTML = num + letras[indice];
+            }
+            else{
+                document.getElementById("demo").innerHTML = "Debes escribir 8 digitos"
+            }
+        }
+    </script>
+</body>
+</html>
