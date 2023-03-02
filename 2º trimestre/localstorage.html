@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sessionstorage</title>
+    <title>localstorage</title>
 </head>
 <body>
     <label for="action">
@@ -22,12 +22,12 @@
 
     <script>
         function guardar(){
-            sessionStorage.setItem("guardadouser",document.getElementById("usuario").value);
-            sessionStorage.setItem("guardadocont",document.getElementById("contraseña").value);
+            localStorage.setItem("guardadouser",document.getElementById("usuario").value);
+            localStorage.setItem("guardadocont",document.getElementById("contraseña").value);
         }
         function mostrar(){
-            document.getElementById("user").innerHTML=sessionStorage.getItem("guardadouser");
-            document.getElementById("cont").innerHTML=sessionStorage.getItem("guardadocont");
+            document.getElementById("user").innerHTML=localStorage.getItem("guardadouser");
+            document.getElementById("cont").innerHTML=localStorage.getItem("guardadocont");
         }
     </script>
 </body>
