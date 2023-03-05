@@ -35,10 +35,9 @@
 
        var inicio= new Date().getTime();
         var record
-
+ 
         function record(){
-            if(localStorage.getItem('record')!=undefined)
-            {
+            if(localStorage.getItem('record')!=undefined){
             record=localStorage.getItem('record');
             document.getElementById('tiempoRecord').innerHTML=record;
             }
