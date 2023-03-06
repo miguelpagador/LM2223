@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina</title>
+</head>
+<style>
+#demo{
+    display: none;
+}
+
+#aparecerecord{
+    display: none;
+}
+</style>
+
+<body>
+    <div>
+        <h1>¡Adivina el número en tiempo record!</h1>
+        <p>He pensado en un número de 3 cifras...</p>
+        <p><div id="demo"><input type="text" name="número" id="número" placeholder="Escribe número"></div></p>
+        <p><div id="aparecerecord"> Enhorabuena acertaste en <span id="tiempoRecord"></span> ¡Nuevo record!</div></p>
+        <button onclick="comprueba()">Comprueba</button>
+    </div>
+
+    <script>
+        
+        var inicio= new Date().getTime();
+        var record;
+        function recordd(){
+            if(localStorage.getItem('record')!=undefined){
+            record=localStorage.getItem('record');
+            document.getElementById('tiempoRecord').innerHTML=record;
+            }
+        }
+        recordd();
+
+        function comprueba(){
+            var numeroAleatorio = Math.random();
+            var min = 000;
+            var max = 999;
+            var x = Math.floor(Math.random()*(max-min+1)+min);
+            console.log(x);
+            document.getElementById("demo").style.display = 'block';
+
+            if (document.getElementById("número").value == numeroAleatorio)
+                    {   
+                        document.getElementById("número").innerHTML = "aparecerecord"
+                    }
+                else
+                    {
+                        
+                    }
+        }
+    </script>
+</body>
+</html>

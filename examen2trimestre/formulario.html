@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <h1>Formulario examen</h1>
+    Nombre:<input type="text" name="name" id="nombre" placeholder="Nombre"> <p id="vnombre"></p>
+    Apellidos:<input type="text" name="surname" id="apellidos" placeholder="Apellidos"> <p id="vapellidos" ></p>
+    Correo electrónico:<input type="email" name="mail" id="email" placeholder="Email"> <p id="vcorreo"></p>
+    PIN:<input type="password" name="pass" id="contra" placeholder="PIN"> <p id="vcontra"></p>
+    Repetir PIN:<input type="password" name="pass2" id="contra2" placeholder="Repetir PIN"> <p id="vcontra2"></p>
+    <input type="checkbox" name="condiciones" id="condiciones">Acepto condiciones de uso<p id="vcondiciones"></p>
+    <button onclick="validar()">Validar</button>
+
+    <script src="formulario.js"></script>
+</body>
+</html>
