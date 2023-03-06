@@ -34,15 +34,14 @@
     <script>
 
        var inicio= new Date().getTime();
-        var record
- 
-        function record(){
+        var record;
+        function recordd(){
             if(localStorage.getItem('record')!=undefined){
             record=localStorage.getItem('record');
             document.getElementById('tiempoRecord').innerHTML=record;
             }
         }
-        record();
+        recordd();
 
 
 
