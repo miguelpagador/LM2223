@@ -1,102 +1,81 @@
-  
-        function validar(){
-
-            var nombre=document.getElementById('nombre').value;
-            var apellido=document.getElementById('apellidos').value;
-            var email=document.getElementById('email').value;
-            var pass=document.getElementById('contra').value;
-            var pass2=document.getElementById('contra2').value;
-            var conditions=document.getElementById('condiciones').value;
-            var nomOK=0;
-            var apellOK=0;
-            var passOK=0;
-            var correoOK=0;
-            var pass2OK=0;
-            var condicionesOK=0;
-
-            document.getElementById('vnombre').innerHTML='';
-            document.getElementById('vapellidos').innerHTML='';
-            document.getElementById('vcorreo').innerHTML='';
-            document.getElementById('vcontra').innerHTML='';
-            document.getElementById('vcontra2').innerHTML='';
-
-
-         function perfil(){
-            if(nomOK==1 && apellOK==1 &&  correoOK==1 && passOK==1 && pass2OK==1){
-            let Usuario = nombre[0]+nombre[1]+apellidos[0]+apellidos[1];
-                    alert('Su usuario es '+Usuario);
-            }
-         }
-
-         function valEmail(valor){
-            if (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(valor))
-        {   
-        document.getElementById('vemail').innerHTML="";
-        correoOK=1;
-        } 
-
-        else 
-        {
-        correoOK=0;
-        document.getElementById('vemail').innerHTML="Formato de correo erróneo"
+function validar()
+{
+    document.getElementById("resultado").innerHTML ="";
+    let entradas = [];    
+    let correctopass = true;
+    let correcto = true;
+    let correctomail=true;
+    let i,id,longitud;
+    for (i=0; i<6; i++) // Inicializamos a vacio todos los labels del error0 al error5
+    {
+        document.getElementById("error"+i).innerHTML = "";
+        entradas.push(document.getElementById("dato"+i).value);
+    }
+    longitud = entradas.length-1; 
+    for (i=0; i<longitud; i++)
+    {
+        if (entradas[i]==""){
+            id = "error"+i;
+            document.getElementById(id).innerHTML = "Este campo es obligatorio";
+            correcto = false; 
         }
-         }
-            if(nombre==""){
-                document.getElementById('vnombre').innerHTML='Este campo es obligatorio';
-            }
-            else{
-                document.getElementById('vnombre').innerHTML='';
-                nomOK=1;
-            }
+    }
+    correctomail=VerificarMail(entradas[2]);
+    if (!correctomail){
+        document.getElementById("error2").innerHTML = "El mail no es correcto";
+    }
+    correctopass=VerificarPassword(entradas[3],entradas[4],3);
+    
+    if (!document.getElementById("dato5").checked)
+    {
+        document.getElementById("error5").innerHTML = "Debes aceptar las condiciones del formulario";
+    }
+    if (correctopass && correcto && correctomail)
+    {
+        document.getElementById("resultado").innerHTML = "El formulario es correcto";
+    }
+}
+
+function VerificarPassword (pass1,pass2,i)
+{
+        let correcto = true;
+        let valores = /^\d+$/;
+        let tamano1 = pass1.length;
+        let tamano2 = pass2.length;
+        let item1 = "error"+i;
+        let item2 = "error"+(i+1);
+
+        document.getElementById(item1).innerHTML = "";
+            document.getElementById(item2).innerHTML = "";
+
+        if(pass1!=pass2)
+        {
+            document.getElementById(item1).innerHTML = "las contraseñas no son iguales";
+            document.getElementById(item2).innerHTML = "las contraseñas no son iguales";
+            correcto=false;
             
+        }else if (tamano1<8 || tamano2 <8)
+        {
+            document.getElementById(item1).innerHTML = "las contraseñas deben tener mínimo 8 dígitos";
+            document.getElementById(item2).innerHTML = "las contraseñas deben tener mínimo 8 dígitos";
+            correcto=false;
 
-           if(apellidos==""){
-                    document.getElementById('vapellidos').innerHTML='Este campo es obligatorio';
-            }
+        }else if(!pass1.match(valores) || !pass2.match(valores))
+        {
+            document.getElementById(item1).innerHTML = "solo dígitos";
+            document.getElementById(item2).innerHTML = "solo dígitos";
+            correcto=false;
+        }
+        return (correcto);
+}
 
-            else{
-                document.getElementById('vapellidos').innerHTML='';
-                apellOK=1;
-            }
-          
-
-            if(email==""){
-                document.getElementById('vemail').innerHTML='Este campo es obligatorio';
-            }
-            else{
-                valEmail(email);
-            }
-             
-            
-            if(document.getElementById('contra').value==""){
-                document.getElementById('vcontra').innerHTML='Este campo es obligatorio';
-            }
-            else{
-                if(document.getElementById('contra').value.length<8){
-                    document.getElementById('vcontra').innerHTML='las contraseñas deben tener mínimo 8 dígitos'
-                }
-                else{
-                document.getElementById('vcontra').innerHTML='';
-                passOK=1;
-                }            
-            }
-
-
-            if(document.getElementById('contra2').value==""){
-                document.getElementById('vcontra2').innerHTML='las contraseñas deben tener mínimo 8 dígitos';
-            }
-            else{
-                if(pass2!=pass){
-                    document.getElementById('vcontra2').innerHTML='Su contraseña no coincide';
-                }
-                else{
-                document.getElementById('vcontra2').innerHTML='';
-                pass2OK=1;
-            }                           
-            }
-
-            if(document.getElementById('condiciones').value==null){
-                document.getElementById('vcondiciones').innerHTML='Debes aceptar las condiciones del formulario';
-            }
-            perfil();
-         }
+function VerificarMail(entrada)
+{
+    let correo = /^[0-9a-zA-Z]+@+[a-zA-z]+[.]+[a-zA-Z]+$/;
+    let correcto = true;
+    if (!correo.test(entrada))
+    {
+        correcto=false;
+    }
+    return (correcto);
+}

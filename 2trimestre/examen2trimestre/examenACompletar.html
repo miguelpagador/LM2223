@@ -19,12 +19,12 @@
           </select> </td>
       <td><input id="color" type="color" onchange="cambiarColor()"></td>
     </tr>
-  </table> 
+  </table>
   <script type="text/javascript">
-      var tamano = 0 // TamaNo inicial
+      var tamano = 100; // TamaNo inicial
       function aumenta(){
         tamano+=25;
-        document.getElementById('parrafo').style.fontSize = tamano+"%"; // aumentamos un 25% el tamaño
+        document.getElementById("parrafo").style.fontSize = tamano+"%"; // aumentamos un 25% el tamaño
       }
       function disminuye(){
         tamano-=25;

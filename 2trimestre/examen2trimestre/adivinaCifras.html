@@ -1,58 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adivina</title>
-</head>
-<style>
-#demo{
-    display: none;
-}
-
-#aparecerecord{
-    display: none;
-}
-</style>
-
-<body>
-    <div>
-        <h1>¡Adivina el número en tiempo record!</h1>
-        <p>He pensado en un número de 3 cifras...</p>
-        <p><div id="demo"><input type="text" name="número" id="número" placeholder="Escribe número"></div></p>
-        <p><div id="aparecerecord"> Enhorabuena acertaste en <span id="tiempoRecord"></span> ¡Nuevo record!</div></p>
-        <button onclick="comprueba()">Comprueba</button>
-    </div>
-
-    <script>
-        
-        var inicio= new Date().getTime();
-        var record;
-        function recordd(){
-            if(localStorage.getItem('record')!=undefined){
-            record=localStorage.getItem('record');
-            document.getElementById('tiempoRecord').innerHTML=record;
-            }
+    <style>
+        #btn-comprueba {
+            display:none;
         }
-        recordd();
-
+        #numero {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Adivina el número en tiempo record!</h1>
+    <p>He pensado un número de 3 cifras...</p>
+    <p id="secreto"></p>
+    <button id="btn-comenzar" onclick="comenzar()">Comenzar</button>
+    <input type="text" id="numero" placeholder="Escribe número"><br>
+    <button id="btn-comprueba" onclick="comprueba()">Comprueba</button>
+    <p id="resultado"></p>
+    <script>
+        var numeroAzar;
+        var inicio;
+        function generaNumero(){
+            numeroAzar = Math.ceil(Math.random()*9).toString()
+                    + Math.ceil(Math.random()*9).toString()
+                    + Math.ceil(Math.random()*9).toString();
+            document.getElementById("secreto").innerHTML = numeroAzar;        
+        } 
+        function comenzar(){
+            inicio = new Date().getTime();
+            generaNumero();
+            document.getElementById("btn-comenzar").style.display = "none";
+            document.getElementById("btn-comprueba").style.display = "block";
+            document.getElementById("numero").style.display = "block";
+            var recordActual = window.localStorage.getItem("record");
+            if (recordActual!=null)
+                document.getElementById("secreto").innerHTML = "El record actual está en " + recordActual + " segundos. <br>" + numeroAzar;
+            document.getElementById("resultado").innerHTML = "";
+        }
         function comprueba(){
-            var numeroAleatorio = Math.random();
-            var min = 000;
-            var max = 999;
-            var x = Math.floor(Math.random()*(max-min+1)+min);
-            console.log(x);
-            document.getElementById("demo").style.display = 'block';
+            let numero = document.getElementById("numero").value;
+            if (numero == numeroAzar)
+            {
+                let fin = new Date().getTime();
+                let diferencia = (fin-inicio)/1000;
+                document.getElementById("resultado").innerHTML = "Enhorabuena, acertaste en " + diferencia + " segundos";
+                var record = window.localStorage.getItem("record");
+                if (record!=null){
+                    var recordReal = parseFloat(record);
+                    if (diferencia<recordReal){
+                        window.localStorage.setItem("record",diferencia.toString());
+                        document.getElementById("resultado").innerHTML += "¡Nuevo record!";
+                    }
+                    
+                }
+                else{
+                    window.localStorage.setItem("record",diferencia.toString());
+                    document.getElementById("resultado").innerHTML += " ¡Nuevo record!";
+                }
+                document.getElementById("btn-comenzar").style.display = "block";
+                document.getElementById("btn-comprueba").style.display = "none";
+                document.getElementById("numero").style.display = "none";
 
-            if (document.getElementById("número").value == numeroAleatorio)
-                    {   
-                        document.getElementById("número").innerHTML = "aparecerecord"
-                    }
-                else
-                    {
-                        
-                    }
+            }
+            else {
+                // Miramos coincidencias
+                let i=0, coincidencias=0;
+                while (i<numeroAzar.length && i<numero.length){
+                    if (numeroAzar[i]==numero[i])
+                        coincidencias+=1;
+                    i++;
+                }
+                document.getElementById("resultado").innerHTML += "Tu propuesta " + numero + " coincide en " + coincidencias + " cifras<br>";         
+            }
         }
     </script>
 </body>
