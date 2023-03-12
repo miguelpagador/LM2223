@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<style>
+    .color{
+        color: red;
+    }
+</style>
+<body>
+    <h1>Formulario a rellenar</h1>
+    <label>Nombre: <input type="text" id="nombre" placeholder="Nombre"><label> <label id="vnombre" class="color"></label> <br><br>
+    <label>Apellidos: <input type="text" id="apellidos" placeholder="Apellidos"><label> <label id="vapellidos" class="color" ></label> <br><br>
+    <label>DNI: <input type="text" id="dni" placeholder="DNI"></label> <label id="vdni" class="color"></label> <br><br>
+    <label>Correo electronico: <input type="email" id="email" placeholder="Correo"><label> <label id="vemail" class="color"></label> <br><br>
+    <label>PIN: <input type="password" id="contra1" placeholder="PIN"><label> <label id="vcontra1" class="color"></label> <br><br>
+    <label>Repetir PIN: <input type="password" id="contra2" placeholder="Repetir PIN"><label> <label id="vcontra2" class="color"></label> <br><br>
+    <input type="checkbox" id="check"> <label>Acepto condiciones de uso</label> <label id="vcheck" class="color"></label> <br><br>
+    <button onclick="validar()">Enviar formulario</button>
+
+    <script>
+        
+        function validar(){
+            if(document.getElementById("nombre").value=="")
+            {
+                document.getElementById("vnombre").innerHTML="Debe rellenar este campo";
+            }
+            else
+            {
+                document.getElementById("vnombre").innerHTML='';
+            }
+
+
+
+            if(document.getElementById("apellidos").value=="")
+            {
+                document.getElementById("vapellidos").innerHTML="Debe rellenar este campo";
+            }
+            else
+            {
+                document.getElementById("vapellidos").innerHTML='';
+            }
+
+
+
+            if(document.getElementById("dni").value=="")
+            {
+                document.getElementById("vdni").innerHTML="Debe introducir un DNI";
+            }
+            else
+            {
+                if(document.getElementById("dni").value.length!=9)
+                {
+                    document.getElementById("vdni").innerHTML="Longitud del DNI incorrecta"
+                }
+                else
+                {
+                    var dni = document.getElementById("dni").value;
+                    var opciones = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
+                    var num = parseInt(dni[0]+ dni[1]+ dni[2]+ dni[3]+ dni[4]+ dni[5]+ dni[6]+ dni[7]);
+                    var letra = num % 23;
+                    if(dni[8]!=opciones[letra])
+                    {
+                        document.getElementById("vdni").innerHTML="DNI incorrecto";
+                    }
+                    else
+                    {
+                        document.getElementById("vdni").innerHTML="";
+                    }
+                }    
+            }
+
+
+            function valEmail(valor){
+            if (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(valor))
+            {   
+                document.getElementById("vemail").innerHTML="";
+            } 
+            else 
+            {
+                document.getElementById("vemail").innerHTML="Formato de correo erróneo"
+            }
+            }   
+
+
+            if(document.getElementById("email").value=="")
+            {
+                document.getElementById("vemail").innerHTML="Debe rellenar este campo";
+            }
+            else
+            {
+                valEmail(document.getElementById("email").value);
+            }
+            
+
+
+            if(document.getElementById("contra1").value=="")
+            {
+                document.getElementById("vcontra1").innerHTML="Debe introducir una contraseña";
+            }
+            else
+            {  
+                if(document.getElementById("contra1").value.length<8)
+                {
+                    document.getElementById("vcontra1").innerHTML="Su contraseña debe contener mínimo 8 caracteres de largo";
+                }
+                else
+                {
+                document.getElementById("vcontra1").innerHTML="";
+                }                   
+            }
+            if(document.getElementById("contra2").value=="")
+            {
+                document.getElementById("vcontra2").innerHTML="Debe introducir otra vez su contraseña";
+            }
+            else
+            {
+                if(document.getElementById("contra1").value!=document.getElementById("contra2").value)
+                {
+                    document.getElementById("vcontra2").innerHTML="Su contraseña no coincide";
+                }
+                else
+                {
+                document.getElementById("vcontra2").innerHTML="";
+                }
+            }
+
+
+            
+            if (document.getElementById("check").checked)
+            {
+                document.getElementById("vcheck").innerHTML="";  
+            }
+            else
+            {
+                document.getElementById("vcheck").innerHTML = "Debes aceptar las condiciones del formulario";
+            }
+        }
+
+    </script>
+
+
+    
+</body>
+</html>
