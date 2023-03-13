@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cuántos dedos tengo?</title>
+</head>
+
+<body>
+    <h1>¡Adivina el numero!</h1>
+    <img id="dedo" src="dedo.png" alt="Sprite del dedo"/>
+    <p id="oculto"></p>
+    <input type="number" id="numero" placeholder="Introduzca un numero">
+    <p id="resultado"></p>
+    <p id="mensaje"></p>
+    <button id="borrar record" onclick="record()">Borrar record</button>
+    <button id="comienzo" onclick="comenzar()">Sacar número a adivinar o intentar otro</button>
+    <button id="comprobar" onclick="comprueba()">Comprobar</button>
+
+    
+
+    <script>
+        function generaNumero(){
+        numazar = Math.floor(Math.random() * 6);
+        document.getElementById("resultado").innerHTML= numazar;
+        }
+
+        function comenzar(){
+            inicio = new Date().getTime();
+            generaNumero();
+            var recordActual = window.localStorage.getItem("record");
+            if (recordActual!=null)
+                document.getElementById("oculto").innerHTML = "El record actual está en " + recordActual + " segundos. <br>" + numeroAzar;
+            document.getElementById("resultado").innerHTML = "";
+        }
+
+        function comprueba(){ 
+            if(document.getElementById("numero").value==numazar)
+            {
+                let fin = new Date().getTime();
+                let diferencia = (fin-inicio)/1000;
+                document.getElementById("mensaje").innerHTML="¡Has acertado! en" +diferencia;
+                var record = window.localStorage.getItem("record");
+                if (record!=null){
+                    var recordReal = parseFloat(record);
+                    if (diferencia<recordReal){
+                        window.localStorage.setItem("record",diferencia.toString());
+                        document.getElementById("resultado").innerHTML += "¡Nuevo record!";
+                    }
+            }
+            else
+            {
+                window.localStorage.setItem("record",diferencia.toString());
+                document.getElementById("mensaje").innerHTML +="¡Nuevo record!";
+            }
+            }
+            else {
+                let i=0, coincidencias=0;
+                while (i<numeroAzar.length && i<numero.length){
+                    if (numeroAzar[i]==numero[i])
+                        coincidencias+=1;
+                    i++;
+                }
+                document.getElementById("resultado").innerHTML += "Sigue probando :-(";         
+            }
+        }
+    </script>
+    
+</body>
+</html>

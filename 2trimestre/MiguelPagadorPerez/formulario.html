@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<style>
+    .color{
+        color: red;
+    }
+</style>
+<body>
+    <h1>Formulario a rellenar</h1>
+    <label>Nombre: <input type="text" id="nombre" placeholder="Nombre"><label> <label id="vnombre" class="color"></label> <br><br>
+    <label>Email: <input type="email" id="email" placeholder="Email"><label> <label id="vemail" class="color"></label> <br><br>
+    <label>Repetir email: <input type="email" id="email2" placeholder="Email"><label> <label id="vemail2" class="color"></label> <br><br>
+    <button onclick="validar()">Registrarse</button> 
+    <p id="user"></p>
+    <script src="formulario.js"></script>
+</body>
+</html>
