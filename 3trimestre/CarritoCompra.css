@@ -1,0 +1,55 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  .header {
+    background-color: #9ec0e2;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #9ec0e2;
+    left: -200px;
+    transition: all 500ms linear;
+    border-top: 2px solid white;
+  }
+  
+  #sidebar.active {
+    left: 0px;
+  }
+  
+  #sidebar ul li {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight:bold;
+    list-style: none;
+    padding: 40px 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.993);
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .carrito {
+    display: block;
+    margin: 0 auto; 
+    height: 50px;
+ }
+  
+  #sidebar .toggle-btn {
+    position: absolute;
+    left: 210px;
+    top: 20px;
+    cursor: pointer;
+  }
+  
+  #sidebar .toggle-btn span {
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  
