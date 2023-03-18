@@ -64,18 +64,4 @@
     font-size: 30px;
   }
 
-  .caja {
-    float:left;
-    padding-left: 220px;
-    padding-right: 200px;
-    padding-top: 50px;
-  }
-  .caja div {
-    height: 500px;
-    width: 1100px; 
-    background-color: #2980B9;
-  }
-  .texto {
-    text-align: center;
-  }
 
