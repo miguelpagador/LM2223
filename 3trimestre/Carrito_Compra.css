@@ -2,10 +2,22 @@
     margin: 0px;
     padding: 0px;
   }
+  
+  #href {
+    color: white;
+    text-decoration: none;
+    cursor: grab;
+  }
+  #href:hover {
+    color: black;
+  }
+
   .header {
     background-color: #9ec0e2;
     padding: 20px;
     text-align: center;
+    display: block;
+    cursor: grab;
   }
 
   #sidebar {
@@ -42,7 +54,7 @@
     position: absolute;
     left: 210px;
     top: 20px;
-    cursor: pointer;
+    cursor: grab;
   }
   
   #sidebar .toggle-btn span {
@@ -52,4 +64,4 @@
     font-size: 30px;
   }
 
-  
+
