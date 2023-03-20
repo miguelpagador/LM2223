@@ -1,69 +1,63 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    box-sizing: border-box;
   }
   
-  #href {
-    color: white;
-    text-decoration: none;
-    cursor: grab;
-  }
-  #href:hover {
-    color: black;
-  }
-
-  .header { 
-    background-color: #9ec0e2;
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-  }
-
-  #sidebar {
-    position: absolute;
-    margin-top: 146px;
-    width: 200px;
-    height: 100%;
-    background: #9ec0e2;
-    left: -200px;
-    transition: all 500ms linear;
-    border-top: 2px solid white;
-    position: fixed;  
-  }
-  
-  #sidebar.active {
-    left: 0px;
-  }
-  
-  #sidebar ul li {
-    color: rgba(255, 255, 255, 0.9);
-    font-weight:bold;
-    list-style: none;
-    padding: 40px 10px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.993);
-    text-align: center;
-    font-size: 20px;
-  }
-  
-  .carrito {
-    display: block;
-    margin: 0 auto; 
-    height: 50px;
+  h2 {
+    margin: 0;
  }
-  
-  #sidebar .toggle-btn {
-    position: absolute;
-    left: 210px;
-    top: 20px;
-    cursor: grab;
+  .header, .nav, .section, .footer {
+    padding: 20px;
+    margin: 20;
+    border: solid 2px white;
+    border-radius: 10px;
+    color: white;
+ }
+
+  body {
+    margin: 0;
+    font-family: "Century Gothic", Helvetica, arial sans-serif;
+    background-color: white;
+    max-height: 100vh;
+    font-size: 1.1em;
   }
-  
-  #sidebar .toggle-btn span {
-    display: block;
-    width: 40px;
+
+  .header {
+    background-color: rgb(134, 175, 250);
     text-align: center;
-    font-size: 30px;
+  }
+  
+  .nav {
+    height: 100vh;
+    width: 200px;
+    float: left;
+    top: 0;
+    left: 0;
+    background-color: rgb(134, 175, 250);
+    overflow-x: hidden;
+    width: 15em;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
   }
 
+  .nav a {
+    color: white;
+    border-bottom: solid white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    display: block;
+  }
 
+  .nav a:hover {
+    cursor: progress;
+  }
+  
+  .section {
+    height: 100vh;
+    max-width: 100%;
+    background-color: white;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    margin-left: 265px;
+  }
