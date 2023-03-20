@@ -16,18 +16,20 @@
     background-color: #9ec0e2;
     padding: 20px;
     text-align: center;
-    display: block;
-    cursor: grab;
+    position: fixed;
+    width: 100%;
   }
 
   #sidebar {
-    position: fixed;
+    position: absolute;
+    margin-top: 146px;
     width: 200px;
     height: 100%;
     background: #9ec0e2;
     left: -200px;
     transition: all 500ms linear;
     border-top: 2px solid white;
+    position: fixed;  
   }
   
   #sidebar.active {
