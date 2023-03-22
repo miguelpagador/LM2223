@@ -1,65 +1,175 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  h2 {
-    margin: 0;
- }
-  .header, .nav, .section, .footer {
-    padding: 20px;
-    margin: 20;
-    border: solid 2px white;
-    border-radius: 10px;
-    color: white;
- }
+  box-sizing: border-box;
+}
 
-  body {
-    margin: 0;
-    font-family: "Century Gothic", Helvetica, arial sans-serif;
-    background-color: white;
-    max-height: 100vh;
-    font-size: 1.1em;
-  }
+/* Estilo general */
+.header, .nav, .section, .footer {
+  padding: 20px;
+  margin: 20;
+  border: solid 2px white;
+  border-radius: 10px;
+  color: white;
+}
 
-  .header {
-    background-color: rgb(134, 175, 250);
-    text-align: center;
-  }
-  
-  .nav {
-    height: 100vh;
-    width: 200px;
-    float: left;
-    top: 0;
-    left: 0;
-    background-color: rgb(134, 175, 250);
-    overflow-x: hidden;
-    width: 15em;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-  }
+body {
+  margin: 0;
+  font-family: "Century Gothic", Helvetica, arial sans-serif;
+  background-color: white;
+  max-height: 100vh;
+  font-size: 1.1em;
+}
 
-  .nav a {
-    color: white;
-    border-bottom: solid white;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    display: block;
-    font-weight: bold;
-  }
+/* Encabezado */
+.header {
+  background-color: rgb(134, 175, 250);
+  text-align: center;
+}
 
-  .nav a:hover {
-    cursor: grab;
-    color: black;
-  }
-  
-  .section {
-    height: 100vh;
-    max-width: 100%;
-    background-color: white;
-    -webkit-flex: 2;
-    -ms-flex: 2;
-    flex: 2;
-    margin-left: 265px;
-  }
+/* Barra lateral */
+.nav {
+  height: 100vh;
+  width: 200px;
+  float: left;
+  top: 0;
+  left: 0;
+  background-color: rgb(134, 175, 250);
+  overflow-x: hidden;
+  width: 15em;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.nav a {
+  color: white;
+  border-bottom: solid white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  cursor: grab;
+  color: black;
+}
+
+/* Sección principal */
+.section {
+  height: 100vh;
+  max-width: 100%;
+  background-color: white;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  margin-left: 265px;
+}
+
+/* Ordenadores */
+.ordenadores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 5em;
+}
+
+.ordenadores div{
+  background-color: rgb(134, 175, 250);
+  padding: 1em;
+  text-align: center;
+}
+
+.ordenadores div:hover {
+  cursor: grab;
+}
+
+/* Imagenes ordenadores */
+#pc_a, #pc_b, #pc_c, #pc_d {
+  justify-content: center;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+/* Teclados */
+.teclados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 5em;  
+}
+
+.teclados div{
+  background-color: rgb(134, 175, 250);
+  padding: 1em;
+}
+
+.teclados div:hover {
+  cursor: grab;
+}
+
+/* Imagenes teclados */
+#teclado_a, #teclado_b, #teclado_c, #teclado_d {
+  justify-content: center;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+/* Ratones */
+.ratones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 5em;  
+}
+
+.ratones div{
+  background-color: rgb(134, 175, 250);
+  padding: 1em;
+}
+
+.ratones div:hover {
+  cursor: grab;
+}
+
+/* Imagenes ratones */
+#ratones_a, #ratones_b, #ratones_c, #ratones_d {
+  justify-content: center;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+/* Altavoces */
+.altavoces {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 5em;  
+}
+
+.altavoces div{
+  background-color: rgb(134, 175, 250);
+  padding: 1em;
+}
+
+.altavoces div:hover {
+  cursor: grab;
+}
+
+/* Imagenes altavoces */
+#altavoces_a, #altavoces_b, #altavoces_c, #altavoces_d {
+  justify-content: center;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}

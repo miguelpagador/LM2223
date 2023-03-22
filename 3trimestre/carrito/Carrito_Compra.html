@@ -5,31 +5,50 @@
     <title>Carrito compra</title> </head>
     <link rel="stylesheet" href="Carrito_Compra.css">
   <body>
-
+    <!-- Encabezado -->
     <div class="header">
         <h2><img src="Imagenes/headerlogo.png" alt="headerlogo" height="100px"></h2>
     </div> 
 
+    <!-- Barra lateral -->
     <div class="sidebar">
       <div class="nav">
         <a href="#" id="href"><img src="Imagenes/carrito.png" alt="Logo carrito" class="carrito" height="25px"></a>
-        <a href="#" id="href">Ordenadores</a>
-        <a href="#" id="href">Teclados</a>
-        <a href="#" id="href">Ratones</a>
-        <a href="#" id="href">Altavoces</a>
+        <a href="#" id="ordenadores" onclick="ordenadores()">Ordenadores</a>
+        <a href="#" id="teclados" onclick="teclados()">Teclados</a>
+        <a href="#" id="ratones" onclick="ratones()">Ratones</a>
+        <a href="#" id="altavoces" onclick="altavoces()">Altavoces</a>
       </div>
     </div>
 
+    <!-- Sección principal -->
     <div class="section">
-      <div class="ordenadores">
-        <div id="pc1"></div>
-        <div id="pc2"></div>
-        <div id="pc3"></div>
-        <div id="pc4"></div>
+      <div id="ordenadores_total" class="ordenadores">
+        <div id="pc_a"></div>
+        <div id="pc_b"></div>
+        <div id="pc_c"></div>
+        <div id="pc_d"></div>
       </div>
-      <div class="teclados">
-        <div id="teclado1">
-        </div>  
+
+      <div id="teclados_total" class="teclados">
+        <div id="teclado_a"></div>
+        <div id="teclado_b"></div>
+        <div id="teclado_c"></div>
+        <div id="teclado_d"></div>
+      </div>
+
+      <div class="ratones">
+        <div id="ratones_a"></div>
+        <div id="ratones_b"></div>
+        <div id="ratones_c"></div>
+        <div id="ratones_d"></div>
+      </div>
+
+      <div class="altavoces">
+        <div id="altavoces_a"></div>
+        <div id="altavoces_b"></div>
+        <div id="altavoces_c"></div>
+        <div id="altavoces_d"></div>
       </div>
   </div>
 
