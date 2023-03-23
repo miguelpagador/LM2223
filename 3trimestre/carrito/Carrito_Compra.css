@@ -102,7 +102,7 @@ body {
 /* Tamaño div exterior */
 .pcdiv, .tecladodiv, .ratonesdiv, .altavocesdiv {
   width: 415px;
-  height: 415px;
+  height: 450px;
 }
 
 /* Estética div */
