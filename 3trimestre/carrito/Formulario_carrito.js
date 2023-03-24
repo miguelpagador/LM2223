@@ -79,4 +79,65 @@ function validacion(){
     {
         document.getElementById("valcaja").innerHTML = "Debes aceptar las condiciones del formulario";
     }
+
+
+    function validarTarjeta(numTarjeta) {
+        var suma = 0;
+        var numTarjetaArr = numTarjeta.toString().split("").reverse();
+      
+        for (var i = 0; i < numTarjetaArr.length; i++) {
+          var num = parseInt(numTarjetaArr[i]);
+      
+          if (i % 2 !== 0) {
+            num *= 2;
+      
+            if (num > 9) {
+              num -= 9;
+              document.getElementById("valnumtarjeta").innerHTML="Número de tarjeta incorrecto";
+            }
+          }
+      
+          suma += num;
+        }
+      
+        return suma % 10 === 0;
+        document.getElementById("valnumtarjeta").innerHTML="";
+        }
+      
+
+        if(document.getElementById("numtarjeta").value=="")
+        {
+        document.getElementById("valnumtarjeta").innerHTML="Debe rellenar este campo";
+        }
+        else
+        {
+            if(document.getElementById("numtarjeta").value.length<16)
+            {
+                document.getElementById("valnumtarjeta").innerHTML="Longitud del número incorrecta";
+            }
+            else
+            {
+                validarTarjeta(document.getElementById("numtarjeta").value)
+            }
+        }
+
+
+    if(document.getElementById("fechatarjeta").value=="")
+    {
+        document.getElementById("valfechatarjeta").innerHTML="Debe rellenar este campo";
+    }
+    else
+    {
+        document.getElementById("valfechatarjeta").innerHTML='';
+    }
+    
+
+    if(document.getElementById("codtarjeta").value=="")
+    {
+        document.getElementById("valcodtarjeta").innerHTML="Debe rellenar este campo";
+    }
+    else
+    {
+        document.getElementById("valcodtarjeta").innerHTML='';
+    }
 }

@@ -1,17 +1,21 @@
 *{box-sizing:border-box;}
 
+h1 {
+	text-align: center;
+}
+
 .caja{
-	width:300px;
+	width:650px;
 	padding:16px;
 	border-radius:10px;
 	margin:auto;
-	background-color:#ccc;
+	background-color:rgb(134, 175, 250);
+	color: white;
 }
 
 label{
 	width:72px;
 	font-weight:bold;
-	display:inline-block;
 }
 
 input[type="text"],
