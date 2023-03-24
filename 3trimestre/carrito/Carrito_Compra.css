@@ -22,7 +22,7 @@ body {
 
 /* Encabezado */
 .header {
-  background-color: rgb(134, 175, 250);
+	background-color:#141C29;	
   text-align: center;
 }
 
@@ -32,7 +32,7 @@ body {
   float: left;
   top: 0;
   left: 0;
-  background-color: rgb(134, 175, 250);
+	background-color:#141C29;	
   overflow-x: hidden;
   width: 15em;
   -webkit-flex: 1;
@@ -45,7 +45,7 @@ body {
   text-decoration: none;
   display: block;
   font-weight: bold;
-  color: black;
+  color: gold;
 }
 
 .nav a:hover {
@@ -80,7 +80,7 @@ body {
 }
 
 .fotos div{
-  background-color: rgb(134, 175, 250);
+	background-color:#141C29;	
   padding: 1em;
   text-align: center;
   border-radius: 10px;
@@ -108,21 +108,22 @@ body {
 /* Estética div */
 .pcdiv:hover {
   cursor: grab;
-  border: solid 3px black;
+  border: solid 3px orangered;
 } 
 .tecladodiv:hover {
   cursor: grab;
-  border: solid 3px black;
+  border: solid 3px orangered;
 } 
 .ratonesdiv:hover {
   cursor: grab;
-  border: solid 3px black;
+  border: solid 3px orangered;
 } 
 .altavocesdiv:hover {
   cursor: grab;
-  border: solid 3px black;
+  border: solid 3px orangered;
 }
 
+/* Botón */
 button {
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
@@ -132,6 +133,7 @@ button {
   font-size: 25px;
   justify-content: center;
 }
+<<<<<<< HEAD
 
 .pagar {
   background-color: white;
@@ -141,3 +143,5 @@ button {
   border: 0px;
 }
 
+=======
+>>>>>>> 7caf6c90d7d5f49a125f3a54f6919da2beb21f4b
