@@ -98,3 +98,65 @@ function restar4() {
     }
     }
 
+
+var conteclado = 0;
+document.getElementById("conteclado").textContent = conteclado;
+function sumar2() {
+    conteclado++;
+  document.getElementById("conteclado").textContent = conteclado;
+}
+function restar2() {
+    if (conteclado<=0)
+    {
+        document.getElementById("conteclado").textContent = 0;
+    }
+    else 
+    {
+    conteclado--;
+    document.getElementById("conteclado").textContent = conteclado;
+    }
+    
+}
+
+
+
+
+var contraton = 0;
+document.getElementById("contraton").textContent = contraton;
+function sumar3() {
+    contraton++;
+  document.getElementById("contraton").textContent = contraton;
+}
+function restar3() {
+    if (contraton<=0)
+    {
+        document.getElementById("contraton").textContent = 0;
+    }
+    else 
+    {
+    contraton--;
+  document.getElementById("contraton").textContent = contraton;
+    }
+    }
+
+
+
+
+var contaltavoz = 0;
+document.getElementById("contaltavoz").textContent =contaltavoz;
+function sumar4() {
+    contaltavoz++;
+  document.getElementById("contaltavoz").textContent =contaltavoz;
+}
+function restar4() {
+    if (contaltavoz<=0)
+    {
+        document.getElementById("contaltavoz").textContent = 0;
+    }
+    else 
+    {
+    contaltavoz--;
+  document.getElementById("contaltavoz").textContent = contaltavoz;
+    }
+    }
+

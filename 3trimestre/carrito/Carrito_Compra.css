@@ -22,7 +22,7 @@ body {
 
 /* Encabezado */
 .header {
-	background-color:#141C29;	
+	background-color:#86aae4;	
   text-align: center;
 }
 
@@ -32,7 +32,7 @@ body {
   float: left;
   top: 0;
   left: 0;
-	background-color:#141C29;	
+	background-color:rgb(134, 175, 250);	
   overflow-x: hidden;
   width: 15em;
   -webkit-flex: 1;
@@ -45,7 +45,7 @@ body {
   text-decoration: none;
   display: block;
   font-weight: bold;
-  color: gold;
+  color: black;
 }
 
 .nav a:hover {
@@ -62,7 +62,6 @@ body {
 .section {
   height: 100vh;
   max-width: 100%;
-  background-color: white;
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
@@ -80,7 +79,7 @@ body {
 }
 
 .fotos div{
-	background-color:#141C29;	
+	background-color:rgb(134, 175, 250);	
   padding: 1em;
   text-align: center;
   border-radius: 10px;
@@ -108,19 +107,19 @@ body {
 /* Estética div */
 .pcdiv:hover {
   cursor: grab;
-  border: solid 3px orangered;
+  border: solid 3px black;
 } 
 .tecladodiv:hover {
   cursor: grab;
-  border: solid 3px orangered;
+  border: solid 3px black;
 } 
 .ratonesdiv:hover {
   cursor: grab;
-  border: solid 3px orangered;
+  border: solid 3px black;
 } 
 .altavocesdiv:hover {
   cursor: grab;
-  border: solid 3px orangered;
+  border: solid 3px black;
 }
 
 /* Botón */
@@ -133,7 +132,6 @@ button {
   font-size: 25px;
   justify-content: center;
 }
-<<<<<<< HEAD
 
 .pagar {
   background-color: white;
@@ -142,6 +140,3 @@ button {
   font-size: 20px;
   border: 0px;
 }
-
-=======
->>>>>>> 7caf6c90d7d5f49a125f3a54f6919da2beb21f4b

@@ -1,37 +1,21 @@
 *{box-sizing:border-box;}
 
 h1 {
-<<<<<<< HEAD
 	text-align: center;
-}
-
-.caja{
-	width:650px;
-	padding:16px;
-	border-radius:10px;
-	margin:auto;
-	background-color:rgb(134, 175, 250);
-	color: white;
-=======
-text-align: center;
->>>>>>> 7caf6c90d7d5f49a125f3a54f6919da2beb21f4b
 }
 
 .caja{
 	width:700px;
 	padding:20px;
 	border-radius:10px;
-	background-color:#141C29;	
+	background-color:rgb(134, 175, 250);	
 	margin: 0 auto;
 }
 
 label{ 
 	width:72px;
 	font-weight:bold;
-<<<<<<< HEAD
-=======
 	color: white;
->>>>>>> 7caf6c90d7d5f49a125f3a54f6919da2beb21f4b
 }
 
 input[type="text"],
@@ -42,7 +26,6 @@ input[type="email"]{
 	border-radius:3px;
 	background-color:#f6f6f6;
 	margin:8px 0;
-	display:inline-block;
 }
 
 textarea{
