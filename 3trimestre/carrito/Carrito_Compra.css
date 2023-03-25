@@ -139,8 +139,8 @@ button {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-rows: auto;
-  row-gap: 5em;
-  column-gap: 10.5em;
+  row-gap: 4.5em;
+  column-gap: 9.5em;
   margin: -17px;
   position: absolute;
 }
@@ -154,8 +154,10 @@ button {
 .pc-info, .teclado-info, .raton-info, .altavoz-info {
   /*display: none;*/
   background-color: black;
-  width: 415px;
-  height: 450px;
+  width: 425px;
+  height: 455px;
   border-radius: 10px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+
 }
