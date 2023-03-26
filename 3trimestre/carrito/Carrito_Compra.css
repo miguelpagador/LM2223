@@ -122,7 +122,6 @@ button {
   height: 30px;
   border: white;
   font-size: 25px;
-  justify-content: center;
   cursor: grab;
 }
 
@@ -132,6 +131,13 @@ button {
   height: 40px;
   font-size: 20px;
   border: 0px;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+}
+
+.a-pagar {
+  margin-top: 8px;
 }
 
 .info {
@@ -152,12 +158,16 @@ button {
 }
 
 .pc-info, .teclado-info, .raton-info, .altavoz-info {
-  /*display: none;*/
+  display: none;
   background-color: black;
   width: 425px;
   height: 455px;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
+}
 
+
+.raton-info, .altavoz-info {
+  margin-top: 420px;
 }

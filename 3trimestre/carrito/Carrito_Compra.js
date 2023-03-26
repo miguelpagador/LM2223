@@ -160,3 +160,60 @@ function restar4() {
     }
     }
 
+
+
+    function infopc()
+  {
+    if(document.getElementById("ocultar1").style.display==="none")
+    {
+        document.getElementById("ocultar1").style.display="block";
+        
+    }
+    else
+    {
+        document.getElementById("ocultar1").style.display="none";
+    }
+  }
+
+
+  function infoteclado()
+  {
+    if(document.getElementById("ocultar2").style.display==="none")
+    {
+        document.getElementById("ocultar2").style.display="block";
+        
+    }
+    else
+    {
+        document.getElementById("ocultar2").style.display="none";
+    }
+  }
+
+
+  function inforaton()
+  {
+    if(document.getElementById("ocultar3").style.display==="none")
+    {
+        document.getElementById("ocultar3").style.display="block";
+        
+    }
+    else
+    {
+        document.getElementById("ocultar3").style.display="none";
+    }
+  }
+
+
+
+  function infoaltavoz()
+  {
+    if(document.getElementById("ocultar4").style.display==="none")
+    {
+        document.getElementById("ocultar4").style.display="block";
+        
+    }
+    else
+    {
+        document.getElementById("ocultar4").style.display="none";
+    }
+  }
