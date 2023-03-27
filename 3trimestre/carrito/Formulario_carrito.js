@@ -90,18 +90,16 @@ function validacion(){
       
           if (i % 2 !== 0) {
             num *= 2;
-      
+            document.getElementById("valnumtarjeta").innerHTML="Tarjeta no valida";
             if (num > 9) {
               num -= 9;
-              document.getElementById("valnumtarjeta").innerHTML="Número de tarjeta incorrecto";
+              document.getElementById("valnumtarjeta").innerHTML="";
             }
           }
-      
           suma += num;
         }
       
         return suma % 10 === 0;
-        document.getElementById("valnumtarjeta").innerHTML="";
         }
       
 
@@ -111,7 +109,7 @@ function validacion(){
         }
         else
         {
-            if(document.getElementById("numtarjeta").value.length<16)
+            if(document.getElementById("numtarjeta").value.length!=16)
             {
                 document.getElementById("valnumtarjeta").innerHTML="Longitud del número incorrecta";
             }
@@ -138,6 +136,15 @@ function validacion(){
     }
     else
     {
-        document.getElementById("valcodtarjeta").innerHTML='';
+        if(document.getElementById("codtarjeta").value.length!=3)
+        {
+            document.getElementById("valcodtarjeta").innerHTML="La longitud del CVV debe ser de 3 números";
+        }
+        else
+        {
+            document.getElementById("valcodtarjeta").innerHTML='';
+        }
     }
 }
+
+
