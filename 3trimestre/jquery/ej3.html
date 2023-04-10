@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src="jquery-3.6.4.js"></script>
+    <script>
+        //Esto sirve para que jQuery cargue el documento
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                $("p:odd").css({"font-size":"100%"});
+            });
+
+        $("#boton2").click(function(){
+                $("p:odd").css({"font-size":"50%"});
+            });
+        });
+    
+
+
+    </script>
+</head>
+<body>
+    <h1>Mi primer jQuery</h1>
+    <p>Parrafo 1</p>
+    <p>Parrafo 2</p>
+    <p>Parrafo 3</p>
+    <p>Parrafo 4</p>
+    <p>Parrafo 5</p>
+    <p>Parrafo 6</p>
+    <button id="boton1">Boton grande</button>
+    <button id="boton2">Boton pequeño</button>
+</body>
+</html>
