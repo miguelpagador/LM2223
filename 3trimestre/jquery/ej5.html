@@ -4,18 +4,26 @@
 <script src="jquery-3.6.4.js"></script>
 <script>
 $(document).ready(function(){
-  $("button").click(function(){
-    $("p").fadeIn();
-    $("p").fadeOut();
-    $("p").fadeToggle();
+  $("#bt1").click(function(){
+    $("p").fadeIn(1000);
+  });
+  $("#bt2").click(function(){
+    $("p").fadeOut(1000);
+  });
+  $("#bt3").click(function(){
+    $("p").fadeToggle(1000);
   });
 });
 </script>
 </head>
 <body>
+  <p>parrafo 1</p>
+  <p>parrafo 2</p>
+  <p>parrafo 3</p>
 
-<button>Click para aparecer</button><br><br>
+  <button id="bt1">Click para aparecer</button><br><br>
+  <button id="bt2">click para desaparecer</button><br><br>
+  <button id="bt3">click para alternar</button><br><br>
 
-<p>parrafo 1</p>
 </body>
 </html>
