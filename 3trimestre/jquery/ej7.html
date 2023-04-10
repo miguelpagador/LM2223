@@ -6,27 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 6</title>
     <script>
-        $(document).ready(function (){
-            $("button").click(function(){ 
-            var ElementosParrafos = $("p");
-            var ElementosImagenes = $("img");
-            var ElementosEnlaces = $("src");
-            var ElementosEncabezados = $("h1");
-            alert("Hay " + ElementosParrafos.length + " parrafos" + ElementosEncabezados + " encabezados"
-            + ElementosEnlaces + " enlaces" + ElementosImagenes + " imagenes");
-        });
-    });
-
+    if ($('#elemento').length) {
+        // si existe
+        } else {
+        // no existe
+    }
     </script>
 </head>
 <body>
-    <h1 class="encabezados">Encabezado</h1>
+    <h1 class="elemento">Encabezado</h1>
     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     <img src="https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?fit=960%2C720" alt="imagen1" height="200px"><br><br>
     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     <p >"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     <a href="https://ichef.bbci.co.uk/news/640/cpsprodpb/35F4/production/_116221831_mediaitem116221830.jpg" target="_blank">click para ir al enlace</a><br><br>
     <img src="https://us.123rf.com/450wm/aprillrain/aprillrain2209/aprillrain220900194/191556087-imagen-abstracta-de-los-cielos-abiertos-el-camino-el-camino-al-cielo-ilustraci%C3%B3n-de-alta-calidad.jpg?ver=6" alt="imagen2" height="200px"><br><br>
-    <button>Click para averiguar</button>
+    <button>Click</button>
 </body>
 </html>
