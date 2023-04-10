@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#bt1").click(function(){
+                $imgsrc = $('img').attr('src');
+                alert($imgsrc);            
+            });
+            $("#bt2").click(function(){
+                alert("HTML del encabezado: " + $("#test2").html());
+            });
+            $("#bt3").click(function(){
+                alert("HTML del parrafo: " + $("#test").html());
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="test2">Encabezado</h1>
+    <p id="test">parrafo</p>
+    <a href="https://ichef.bbci.co.uk/news/640/cpsprodpb/35F4/production/_116221831_mediaitem116221830.jpg" target="_blank">click para ir al enlace</a><br><br>
+    <img src="https://us.123rf.com/450wm/aprillrain/aprillrain2209/aprillrain220900194/191556087-imagen-abstracta-de-los-cielos-abiertos-el-camino-el-camino-al-cielo-ilustraci%C3%B3n-de-alta-calidad.jpg?ver=6" alt="imagen2"><br><br>
+    <button id="bt1">Obtener scr de la imagen</button><br><br>
+    <button id="bt2">Obtener html del encabezado</button><br><br>
+    <button id="bt3">Obtener html de un párrafo</button><br><br>
+</body>
+</html>
