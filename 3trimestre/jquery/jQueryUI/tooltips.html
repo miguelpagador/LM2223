@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Tooltip - Forms</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  label {
+    display: inline-block; width: 5em;
+  }
+  fieldset div {
+    margin-bottom: 2em;
+  }
+  fieldset .help {
+    display: inline-block;
+  }
+  .ui-tooltip {
+    width: 210px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var tooltips = $( "[title]" ).tooltip({
+      position: {
+        my: "left top",
+        at: "right+5 top-5",
+        collision: "none"
+      }
+    });
+    $( "<button>" )
+      .text( "Show help" )
+      .button()
+      .on( "click", function() {
+        tooltips.tooltip( "open" );
+      })
+      .insertAfter( "form" );
+  } );
+  </script>
+</head>
+<body>
+ 
+<form>
+  <fieldset>
+    <div>
+      <label for="firstname">Nombre</label>
+      <input id="firstname" name="firstname" title="Pon tu nombre">
+    </div>
+    <div>
+      <label for="lastname">Apellidos</label>
+      <input id="lastname" name="lastname" title="Pon tus apellidos">
+    </div>
+    <div>
+      <label for="dni">DNI</label>
+      <input id="dni" name="dni" title="Pon tu dni">
+    </div>
+    <div>
+        <label for="passwd">Contraseña</label>
+        <input id="passwd" name="passwd" title="Pon tu contraseña">
+    </div>
+    <div>
+        <label for="correo">Correo</label>
+        <input id="correo" name="correo" title="Pon tu correo">
+    </div>
+  </fieldset>
+</form>
+ 
+ 
+</body>
+</html>
