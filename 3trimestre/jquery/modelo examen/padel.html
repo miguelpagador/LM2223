@@ -118,6 +118,7 @@
         $(document).ready(function () {
             $("#fecha").datepicker({ minDate: 1, maxDate: "+1W"});
             $("#reserva").click(function (e) { 
+                // evita que se envie el formulario
                 e.preventDefault();
                 $("#totalPrecio").html("Precio: 0€");
                 let hora = $("#hora").val();
