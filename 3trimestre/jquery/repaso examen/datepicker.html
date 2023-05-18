@@ -93,8 +93,15 @@
             $("#f_entrada").change(function (e) {
                 $("#f_salida").datepicker('setDate', null);
                 $("#f_salida").datepicker("option", "minDate", null);
-                $("#f_salida").datepicker("option", "minDate", $("#f_entrada").val());
-                $("#f_salida").datepicker({ minDate: $("#f_entrada").val(), maxDate: "+1Y" });
+                let fechaEntrada = $("#f_entrada").val();
+                let dia = fechaEntrada.substring(0,2);
+                let mes = fechaEntrada.substring(3,5)-1;
+                let anyo = fechaEntrada.substring(6,10);
+                let fechaEntradaDate = new Date(anyo,mes,dia,0,0,0,0);
+                fechaEntradaDate.setDate(fechaEntradaDate.getDate()+1)
+                let fechaFormateada = fechaEntradaDate.toLocaleDateString();
+                $("#f_salida").datepicker("option", "minDate", fechaFormateada);
+                $("#f_salida").datepicker({ minDate: fechaFormateada, maxDate: "+1Y" });
             })
 
 
