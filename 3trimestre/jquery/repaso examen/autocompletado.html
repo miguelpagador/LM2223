@@ -58,11 +58,8 @@ https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
 <body>
     <div id="containerID">
         <div>
-            <h2>GeeksforGeeks</h2>
-            <b>
-                Autocomplete Search using jQuery
-                and Wikipedia Opensearch API
-            </b>
+            <h2>autocomplete</h2>
+
 
             <p></p>
 
@@ -78,22 +75,18 @@ https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
             source: function (request, response) {
                 console.log(request.term);
                 $.ajax({
-
-                    // Wikipedia API url link
                     url:
                         "https://gutendex.com/books",
+                    type: "GET",
                     dataType: "json",
                     data: {
 
-                        // Output format
-
                         search: request.term,
                     },
-                    success: function (data) {
-                        response($.map(data,function(data){
-                            
-                            console.log(data[3]);
-                            
+                    success: function (data) {  
+                        response($.map(data.results, function (item) {
+                            console.log(item);
+                            return { label: item.title, value: item.title };  
                         })
                            
                         
