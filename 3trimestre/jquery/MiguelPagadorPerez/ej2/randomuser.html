@@ -51,73 +51,74 @@
     </div>
     <script>
         $(document).ready(function () {
-            $("#btn-generico").click(function () {
+            $('#btn-generico').click(function () {
                 $.ajax({
                     url: 'https://randomuser.me/api/',
                     dataType: 'json',
                     success: function (data) {
+                        $('.circle').empty()
+                        $('.fullname').empty()
+                        $('.email').empty()
+                        $('.city').empty()
                         console.log(data);
-                        let nombre_completo = data.results[0].name.first + ' ' + data.results[0].name.last;
-                        let usuario = data.results[0].login.username;
-                        let email = data.results[0].email;
-                        let ciudad = data.results[0].location.city;
-                        $(".circle").attr("src", data.results[0].picture.medium);
-                        $(".fullname").html(nombre_completo);
-                        $(".username").html(usuario);
-                        $(".email").html(email);
-                        $(".city").html(ciudad);
+                        console.log(data.results[0].name.title);
+                        console.log(data.results[0].name.first);
+                        console.log(data.results[0].name.last);
+                        $
+                        $('.circle').attr('src', data.results[0].picture.large);
+                        $('.fullname').append(data.results[0].name.title + ' ' + data.results[0].name.first + ' ' + data.results[0].name.last);
+                        $('.email').append(data.results[0].email);
+                        $('.city').append(data.results[0].location.city);
                     }
                 });
-            });
-            $("#btn-espanol").click(function () {
+            })
+
+            $('#btn-espanol').click(function () {
                 $.ajax({
-                    url: 'https://randomuser.me/api/?nat=es',
+                    url: 'https://randomuser.me/api/' + '?nat=es',
                     dataType: 'json',
                     success: function (data) {
+                        $('.circle').empty()
+                        $('.fullname').empty()
+                        $('.email').empty()
+                        $('.city').empty()
                         console.log(data);
-                        let nombre_completo = data.results[0].name.first + ' ' + data.results[0].name.last;
-                        let usuario = data.results[0].login.username;
-                        let email = data.results[0].email;
-                        let ciudad = data.results[0].location.city;
-                        $(".circle").attr("src", data.results[0].picture.medium);
-                        $(".fullname").html(nombre_completo);
-                        $(".username").html(usuario);
-                        $(".email").html(email);
-                        $(".city").html(ciudad);
+                        console.log(data.results[0].name.title);
+                        console.log(data.results[0].name.first);
+                        console.log(data.results[0].name.last);
+
+                        $('.circle').attr('src', data.results[0].picture.large);
+                        $('.fullname').append(data.results[0].name.title + ' ' + data.results[0].name.first + ' ' + data.results[0].name.last);
+                        $('.email').append(data.results[0].email);
+                        $('.city').append(data.results[0].location.city);
                     }
                 });
-            });
-            $("#btn-varios").click(function () {
+            })
+
+            $('#btn-varios').click(function () {
                 $.ajax({
-                    url: 'https://randomuser.me/api/?nat=es&results=5',
+                    url: 'https://randomuser.me/api/' + '?nat=es&results=5',
                     dataType: 'json',
                     success: function (data) {
-                        console.log(data);
-                        let total = data.results.length;
-                        console.log("Total :" + total);
-                        // Vaciamos de una ejecución anterior
-                        $(".circle").empty();
-                        $(".fullname").empty();
-                        $(".username").empty();
-                        $(".email").empty();
-                        $(".city").empty();
-                        for (let i = 0; i < total; i++) {
-                            let nombre_completo = data.results[i].name.first + ' ' + data.results[i].name.last + "<br>";
-                            let usuario = data.results[i].login.username;
-                            let email = data.results[i].email;
-                            let ciudad = data.results[i].location.city;
-                            $(".circle").attr("src", "multiple.png");
-                            $(".fullname").append(nombre_completo);
-                            $(".username").append(usuario + "<br>");
-                            $(".email").append(email + "<br>");
-                            $(".city").append(ciudad + "<br>");
+
+                        $('.circle').empty()
+                        $('.fullname').empty()
+                        $('.email').empty()
+                        $('.city').empty()
+                        let longitudResult = data.results.length;
+                        console.log(data.results.length);
+                        for (let index = 0; index < longitudResult; index++) {
+                            $('.circle').attr('src', './multiple.png');
+                            $('.fullname').append(data.results[index].name.title + ' ' + data.results[index].name.first + ' ' + data.results[index].name.last+'<br>');
+                            $('.email').append(data.results[index].email+'<br>');
+                            $('.city').append(data.results[index].location.city+'<br>');
                         }
+
 
                     }
                 });
-            });
-        });
-        
+            })
+        })
     </script>
 </body>
 

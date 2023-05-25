@@ -73,7 +73,7 @@ https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
     <script type="text/javascript">
         $(".searchClass").autocomplete({
             source: function (request, response) {
-                console.log(request.term);
+                
                 $.ajax({
                     url:
                         "https://gutendex.com/books",
@@ -83,10 +83,14 @@ https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
 
                         search: request.term,
                     },
-                    success: function (data) {  
+                    success: function (data) { 
+                        console.log(data);
                         response($.map(data.results, function (item) {
-                            console.log(item);
-                            return { label: item.title, value: item.title };  
+                            
+                            return { 
+                                label: item.title,
+                                value: item.title 
+                            };  
                         })
                            
                         

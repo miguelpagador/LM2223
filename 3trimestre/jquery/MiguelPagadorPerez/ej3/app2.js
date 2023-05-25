@@ -1,14 +1,14 @@
-function aleatorizaLocalizador() {
-    let abecedario = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    
-    let aleatorio = ""; //12 letras
-    for (let index = 0; index < 12; index++) {
-        aleatorio = aleatorio + abecedario.charAt(Math.floor(Math.random() * abecedario.length));
+function localizador() {
+    const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let result = '';
+  
+    for (let i = 0; i < 12; i++) {
+        result += letras.charAt(Math.floor(Math.random() * letras.length));
     }
-    return aleatorio; // ya tenemos el localizador
-}
-
-$(document).ready(function() {
+    return result;
+  }
+  
+  $(document).ready(function () {
     $.datepicker.regional['es'] = {
         closeText: 'Cerrar',
         prevText: '< Ant',
@@ -28,7 +28,6 @@ $(document).ready(function() {
     };
     $.datepicker.setDefaults($.datepicker.regional['es']);
     $('#vuelta').prop('disabled', true);
-    // para el checkbox de idayvuelta
     $('#idayvuelta').change(function () {
         if (this.checked) {
             $('#vuelta').val("");
@@ -37,7 +36,6 @@ $(document).ready(function() {
             $('#vuelta').prop('disabled', true);
         }
     });
-    // configura el datepicker de ida
     $('#ida').datepicker({
         minDate: '+1D',
         maxDate: '+1M',
@@ -51,26 +49,23 @@ $(document).ready(function() {
     $('#vuelta').datepicker({
         dateFormat: 'dd-mm-yy'
     });
-    $('#reservation-form').submit(function(e){
+    $('#reservation-form').submit(function (e) {
         e.preventDefault();
-        let nombre = $('#name').val();
-        let apellidos = $('#surname').val();
-        let email = $('#email').val();
-        let dni = $('#dni').val();
-        let ida = $('#ida').val();
-        let vuelta = $('#vuelta').val()
-        let localizador = aleatorizaLocalizador();
-        $('#resumen').empty();
-        let resumen = "Nombre : "+nombre+"<br>"+
-                        "Apellido : "+apellidos+"<br>"+
-                        "Email : "+email+"<br>"+
-                        "dni : "+dni+"<br>"+
-                        "ida : "+ida+"<br>"+
-                        "vuelta : "+vuelta+"<br>"+
-                        "Localizador : "+localizador+"<br>";
-
-        $('#resumen').append(resumen);
-       
-        $('#qrcode').html('<img src="https://api.qrserver.com/v1/create-qr-code/?data='+resumen+';size=100x100" alt="" title="" />')
-    })
-})
+        let fVuelta = $('#vuelta').val();
+        let vuelta = "";
+        if (fVuelta!='' && $('#idayvuelta').prop('checked'))
+            vuelta = 'Fecha de Vuelta: ' + fVuelta + '<br>';
+        else
+            vuelta = '';
+        let resumen = 'Nombre: ' + $('#name').val() + '<br>' +
+                      'Apellidos: ' + $('#surname').val() + '<br>' +
+                      'Email: ' + $('#email').val() + '<br>' +
+                      'DNI: ' + $('#dni').val() + '<br>' +
+                      'Fecha de Ida: ' + $('#ida').val() + '<br>' +
+                      vuelta +
+                      'Localizador: ' + localizador();
+                      (!$('#idayvuelta').prop('checked') ? 'Fecha de Vuelta: ' + $('#vuelta').val() : '');
+        $('#resumen').html(resumen);
+        $('#qrcode').html('<img src=\"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+resumen+'\"/>');      
+    });
+  });
